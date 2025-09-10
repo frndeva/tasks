@@ -42,6 +42,17 @@ app.delete('/tasks/:id', (req, res) => {
     res.json(deletedTask[0]);
 });
 
+// Marquage de la tâche (complétée ou non complétée)
+app.patch('/tasks/:id/completed', (req, res) => {
+    const  { id } = req.params;
+    const  { state } = req.body;
+
+    const task = tasks.find(t => t.id === parseInt(id));
+
+    if (state !== undefined) task.state = state;
+
+    res.json(talk);
+});
 
 app.listen(port, () => {
     console.log(`Serveur Express en cours d'exécution sur http://localhost:${port}`);

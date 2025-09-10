@@ -6,5 +6,19 @@
   "dependencies": {
     "axios": "^1.11.0",
     "express": "^5.1.0"
-  }
+  },
+  "name": "tasks",
+  "description": "A small REST API in Node.js + Express for managing tasks.\r This project serves as an example for learning how to create and test an API with Bruno.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frndeva/tasks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frndeva/tasks/issues"
+  },
+  "homepage": "https://github.com/frndeva/tasks#readme"
 }

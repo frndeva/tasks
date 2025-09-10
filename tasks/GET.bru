@@ -1,0 +1,24 @@
+meta {
+  name: GET
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/tasks
+  body: json
+  auth: inherit
+}
+
+body:json {
+  [
+    {
+     "title": "Git",
+     "state": "not completed"
+    }
+  ]
+}
+
+settings {
+  encodeUrl: true
+}
