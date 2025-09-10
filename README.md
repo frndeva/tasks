@@ -1,41 +1,38 @@
-# 📋 API Liste de tâche (Express.js)
+# 📋 Task List API (Express.js)
 
-Une petite API REST en **Node.js + Express** pour gérer des tâches.  
-Ce projet sert d’exemple pour apprendre à créer et tester une API avec Bruno.
+A small REST API in Node.js + Express for managing tasks.
+This project serves as an example for learning how to create and test an API with Bruno.
 
 ## Installation
 
-1. Clone le projet :
+1. Clone the project: :
    git clone https://github.com/frndeva/tasks.git
    cd tasks
    
-2. Installe les dépendances :
+2. Install dependencies :
    npm install
 
-3. Lance le serveur :
+3. Start the server :
    npm start
 
-## ➕ Créer une tâche
+## ➕ Create a task
 POST /tasks
 Body json 
 {
-  "title": "Apprendre Express",
-  "state": "en cours"
+  "title": "Git",
+  "state": "not completed"
 }
 
-## 📋 Récupérer toutes les tâches
+## 📋 Retrieve all tasks
 GET /tasks
 
-## 🔍 Filtrer les tâches par état
-GET /tasks?state=completed
-
-## ✏️ Modifier une tâche
+## ✏️ Edit a task
 PUT /tasks/:id
 Body json
 {
-  "title": "Apprendre Express.js",
-  "state": "terminée"
+  "title": "Git",
+  "state": "completed"
 }
 
-## 🗑️ Supprimer une tâche
+## 🗑️ Delete a task
 DELETE /tasks/:id
