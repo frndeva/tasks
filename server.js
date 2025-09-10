@@ -10,20 +10,14 @@ let idCounter = 1;
 // Ajoute une nouvelle tâche
 app.post('/tasks', (req, res) => {
     const { title, state } = req.body;
-    const task = { id: idCounter++, title, state };
-    try {
-        tasks.push(task)
-    } catch {
-        res.send("erreur: la tâche n'est pas ajouté");
-        return;
-    }
+    const task = { id: idCounter++, title, state: state ?? "en cours" };
+    tasks.push(task);
     res.send("ok");
 });
 
 // Récupère la liste complète des tâches
 app.get('/tasks', (req, res) => {
-    res.json(tasks);
-    res.send("ok")
+    res.json(tasks)
 });
 
 // Modifie une tâche spécifique
@@ -37,7 +31,6 @@ app.put('/tasks/:id', (req, res) => {
     if (state !== undefined) task.state = state;
 
     res.json(task);
-    res.send("ok");
 });
 
 // Supprime une tâche spécifique
@@ -47,8 +40,8 @@ app.delete('/tasks/:id', (req, res) => {
 
     const deletedTask = tasks.splice(index, 1);
     res.json(deletedTask[0]);
-    res.send("ok");
 });
+
 
 app.listen(port, () => {
     console.log(`Serveur Express en cours d'exécution sur http://localhost:${port}`);
