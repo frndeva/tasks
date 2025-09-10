@@ -1,0 +1,15 @@
+meta {
+  name: PATCH
+  type: http
+  seq: 5
+}
+
+patch {
+  url: http://localhost:3000/tasks/id/completed
+  body: json
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
