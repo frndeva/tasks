@@ -26,6 +26,9 @@ Body json
 ## 📋 Retrieve all tasks
 GET /tasks
 
+## Filter by state
+GET /tasks?state=completed
+
 ## ✏️ Edit a task
 PUT /tasks/:id
 Body json
@@ -36,3 +39,10 @@ Body json
 
 ## 🗑️ Delete a task
 DELETE /tasks/:id
+
+## ☑️ Task marking
+PATCH /tasks/:id/completed
+Body json
+{
+  "state": "completed"
+}
